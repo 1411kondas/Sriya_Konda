@@ -1,0 +1,26 @@
+1) even though the sex category for athletes is going to be repeating 'M' and
+'F' a bunch, I did not split it into it's own table because otherwise the linking
+table would just read a bunch of 1s and 2s.
+
+2) There are multiple teams that fit to one NOC, so I split teams into their
+own table.
+
+3) In splitting off NOC and NOC_regions, I noticed some issues with teams and
+other things showing up where they should not. That is because my CSV reader
+was splitting the file lines in the wrong spots when there was a comma in the
+team name, for example. Do I know how to fix that? No I do not. So I am going
+to leave it. I also know that it is going to come up in the rest of my CSV
+file creations, and I won't be able to change those either.
+
+4) Because more than one games can be matched to a city, I made cities into
+a separate table. I see and recognize that some of the entries are years and not
+in fact cities. This I am blaming on the above problem of not knowing how to
+correctly parse a CSV file.
+
+5) In convert.py, It is not a cohesive program- in fact, it is several little
+bitty programs that have been commented out so I could basically copy the code
+and do it again with slightly different words.
+
+6) I can't link my data. I don't know how. Therefore, I cannot do the complete
+assignment because I simply do not know how to use my database and I don't
+even think that it works.
