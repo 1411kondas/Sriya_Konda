@@ -142,20 +142,20 @@ csv_file.close()
 # MAP A NOC TO AN ID
 
 NOC_regions = {}
-csv_file = open('athlete_events.csv')
+csv_file = open('noc_regions_full.csv')
 reader = csv.reader(csv_file)
 NOC_regions_file = open('NOC_regions.csv', 'w')
 writer = csv.writer(NOC_regions_file)
 next(reader)
 id_counter = 1
 for row in reader:
-    NOC_name = row[7]
-    if NOC_name not in NOC_regions: #Have I seen the team before? No? great! do the thing!
+    NOC_abbr = row[0]
+    NOC_full_name = row[1]
+    if NOC_abbr not in NOC_regions: #Have I seen the team before? No? great! do the thing!
         NOC_id = id_counter
         id_counter += 1
-
-        NOC_regions[NOC_name] = NOC_id
-        writer.writerow([NOC_id, NOC_name])
+        NOC_regions[NOC_abbr] = {"noc_id": NOC_id, "noc_full_name": NOC_full_name}
+        writer.writerow([NOC_id, NOC_abbr, NOC_full_name])
 NOC_regions_file.close()
 csv_file.close()
 
@@ -170,8 +170,8 @@ next(reader)
 for row in reader:
     team_name = row[6]
     team_id = teams[team_name]
-    NOC_name = row[7]
-    NOC_id = NOC_regions[NOC_name]
+    NOC_abbr = row[7]
+    NOC_id = NOC_regions[NOC_abbr]["noc_id"]
     if team_id not in team_NOC:
         team_NOC[team_id] = NOC_id
         writer.writerow([team_id, NOC_id])
