@@ -2,6 +2,8 @@
 * mockup4.js
 * This is for generating a random playlist
 * Sriya and Kitty
+* PLEASE NOTE! IT WILL THROW A 404 ERROR! DO NOT FRET! GO BACK ONE PAGE AND
+* IT WILL SHOW UP (chrome only? not sure) HELP US FIX THIS PLEASE?
 */
 
 
