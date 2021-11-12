@@ -37,13 +37,14 @@ function onGoButton() {
     .then((response) => response.json())
 
     .then(function(songs) {
-        var tableBody = '<tr><th></th><th>Song Name</th><th>Artist Name</th></tr>';
+        var tableBody = '<tr><th></th><th>Song Name</th><th>Artist Name</th><th>Release Date</th></tr>';
 
         for (var k = 0; k < songs.length; k++) {
             var song = songs[k];
             tableBody += '<tr><td><a href="' + song['url'] +'"> 🎵 ⏯ </a></td>'
                       + '<td>' + song['song_name'] + '</td>'
                       + '<td>' + song['artist_name'] + '</td>'
+                      + '<td>' + song['release_date_month'] +'/'+ song['release_date_day'] + '/' + song['release_date_year'] + '</td>'
                       + '</tr>';
         }
 

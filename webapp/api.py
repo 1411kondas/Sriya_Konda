@@ -27,7 +27,7 @@ def get_connection():
 
 @api.route('/artists/<artist_name>')
 def get_songs_for_artist(artist_name):
-    query = ''' SELECT songs.url, songs.song_name, artists.artist_name
+    query = ''' SELECT songs.url, songs.song_name, artists.artist_name, songs.release_date_year, songs.release_date_month, songs.release_date_day
                 FROM songs, artists
                 WHERE artists.artist_id = songs.artist_id
                 AND artists.artist_name ILIKE %s
@@ -39,7 +39,7 @@ def get_songs_for_artist(artist_name):
         cursor = connection.cursor()
         cursor.execute(query, (artist_name + '%',))
         for row in cursor:
-            song = {'url':row[0], 'song_name':row[1], 'artist_name':row[2]}
+            song = {'url':row[0], 'song_name':row[1], 'artist_name':row[2], 'release_date_year':row[3], 'release_date_month':row[4], 'release_date_day':row[5]}
             artist_song_list.append(song)
         cursor.close()
         connection.close()
@@ -72,3 +72,30 @@ def generate_playlist(energy):
         print(e, file=sys.stderr)
 
     return json.dumps(playlist_song_list)
+
+
+@api.route('/top_200/<week_num>')
+def get_chart(week_num):
+    query = ''' SELECT songs.url, weekly_ranks.ranking, songs.song_name, artists.artist_name
+                FROM songs, artists, weekly_ranks
+                WHERE artists.artist_id = songs.artist_id
+                AND artists.artist_id = weekly_ranks.artist_id
+                AND songs.artist_id = weekly_ranks.artist_id
+                AND songs.song_id = weekly_ranks.song_id
+                AND weekly_ranks.week_num = %s
+                ORDER BY weekly_ranks.ranking
+                '''
+    week_song_list = []
+    try:
+        connection = get_connection()
+        cursor = connection.cursor()
+        cursor.execute(query, (week_num,))
+        for row in cursor:
+            song = {'url':row[0], 'song_rank':row[1], 'song_name':row[2], 'artist_name':row[3]}
+            week_song_list.append(song)
+        cursor.close()
+        connection.close()
+    except Exception as e:
+        print(e, file=sys.stderr)
+
+    return json.dumps(week_song_list)

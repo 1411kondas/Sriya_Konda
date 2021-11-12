@@ -1,5 +1,5 @@
 /*
-* mockup4.js
+* mockup3.js
 * This is for generating a random playlist
 * Sriya and Kitty
 */
@@ -24,33 +24,34 @@ function getAPIBaseURL() {
 }
 
 
-function getEnergyValue() {
-    var query = document.getElementById('energy_value').value;
-    query = query * 0.01
+function getWeek() {
+    var query = document.getElementById('week_selector').value;
     return query;
 }
 
+
 function onSubmitButton() {
-    var url = getAPIBaseURL() + '/generate_playlist/' + getEnergyValue();
+    var url = getAPIBaseURL() + '/top_200/' + getWeek();
 
     fetch(url, {method: 'get'})
 
     .then((response) => response.json())
 
     .then(function(songs) {
-        var tableBody = '<tr><th></th><th>Song</th><th>Artist</th></tr>';
+        var tableBody = '<tr><th></th><th>Ranking</th><th>Song</th><th>Artist</th></tr>';
 
         for (var k = 0; k < songs.length; k++) {
             var song = songs[k];
             tableBody += '<tr><td><a href="' + song['url'] +'"> ⏯ </a></td>'
+                      + '<td>' + song['song_rank'] + '</td>'
                       + '<td>' + song['song_name'] + '</td>'
                       + '<td>' + song['artist_name'] + '</td>'
                       + '</tr>';
         }
 
-        var playlistTableElement = document.getElementById('playlist_table');
-        if (playlistTableElement) {
-            playlistTableElement.innerHTML = tableBody;
+        var chartTableElement = document.getElementById('chart_table');
+        if (chartTableElement) {
+            chartTableElement.innerHTML = tableBody;
         }
     })
 

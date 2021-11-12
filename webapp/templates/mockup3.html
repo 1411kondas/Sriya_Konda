@@ -6,84 +6,86 @@
     CS 257 Software Design class, Fall 2021.
 -->
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>HTML/CSS samples</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='mockup3.css') }}" />
     <script type="text/javascript" src="{{ url_for('static', filename='mockup3.js') }}" ></script>
-    <title>HTML/CSS samples</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" />
 </head>
 
-
 <body style="background-color:#181717;">
-    <a href="index.html"><button class="homeIcon">🏠</button></a>
+    <a href="home"><button class="homeIcon">🏠</button></a>
 
     <h1>Search by Date</h1>
 
-    <div class="month">
-      <ul>
-        <li class="prev">&#10094;</li>
-        <li class="next">&#10095;</li>
-        <li>August<br><span style="font-size:18px">2021</span></li>
-      </ul>
+
+    <div id="input_form" class="center">
+    <p class="center">I want the Top 200 Songs List for
+      <select id="week_selector">
+          <option value="01">2019-12-27 -- 2020-01-03</option>
+          <option value="02">2020-01-03--2020-01-10</option>
+          <option value="03">2020-01-10--2020-01-17</option>
+          <option value="04">2020-01-17--2020-01-24</option>
+          <option value="05">2020-01-24--2020-01-31</option>
+          <option value="06">2020-01-31--2020-02-07</option>
+          <option value="07">2020-02-07--2020-02-14</option>
+          <option value="08">2020-02-14--2020-02-21</option>
+          <option value="09">2020-02-21--2020-02-28</option>
+          <option value="10">2020-02-28--2020-03-06</option>
+          <option value="11">2020-03-06--2020-03-13</option>
+          <option value="12">2020-03-13--2020-03-20</option>
+          <option value="13">2020-03-20--2020-03-27</option>
+          <option value="14">2020-03-27--2020-04-03</option>
+          <option value="15">2020-04-03--2020-04-10</option>
+          <option value="16">2020-04-10--2020-04-17</option>
+          <option value="17">2020-04-17--2020-04-24</option>
+          <option value="18">2020-04-24--2020-05-01</option>
+          <option value="19">2020-05-01--2020-05-08</option>
+          <option value="20">2020-05-08--2020-05-15</option>
+          <option value="21">2020-05-15--2020-05-22</option>
+          <option value="22">2020-05-22--2020-05-29</option>
+          <option value="23">2020-05-29--2020-06-05</option>
+          <option value="24">2020-06-05--2020-06-12</option>
+          <option value="25">2020-06-12--2020-06-19</option>
+          <option value="26">2020-06-19--2020-06-26</option>
+          <option value="27">2020-06-26--2020-07-03</option>
+          <option value="28">2020-07-03--2020-07-10</option>
+          <option value="29">2020-07-10--2020-07-17</option>
+          <option value="30">2020-07-17--2020-07-24</option>
+          <option value="31">2020-07-24--2020-07-31</option>
+          <option value="32">2020-07-31--2020-08-07</option>
+          <option value="33">2020-08-07--2020-08-14</option>
+          <option value="34">2020-08-14--2020-08-21</option>
+          <option value="35">2020-08-21--2020-08-28</option>
+          <option value=“36”>2020-8-28--2020-9-04</option>
+          <option value=“37">2020-9-04--2020-9-11</option>
+          <option value=“38”>2020-9-11--2020-9-18</option>
+          <option value=“39">2020-9-18--2020-9-25</option>
+          <option value=“40”>2020-9-25--2020-10-02</option>
+          <option value=“41">2020-10-02--2020-10-09</option>
+          <option value=“42”>2020-10-09--2020-10-16</option>
+          <option value=“43">2020-10-16--2020-10-23</option>
+          <option value=“44”>2020-10-23--2020-10-30</option>
+          <option value=“45">2020-10-30--2020-11-06</option>
+          <option value=“46”>2020-11-06--2020-11-13</option>
+          <option value=“47">2020-11-13--2020-11-20</option>
+          <option value=“48”>2020-11-20--2020-11-27</option>
+          <option value=“49">2020-11-27--2020-12-04</option>
+          <option value=“50”>2020-12-04--2020-12-11</option>
+          <option value=“51">2020-12-11--2020-12-18</option>
+          <option value=“52”>2020-12-18--2020-12-25</option>
+          <option value=“53">2020-12-25--2020-01-01</option>
+
+      </select>
+      <button id="submit_button">Submit!</button>
+    </p>
     </div>
 
-    <div class="calendar_body">
-      <ul class="weekdays">
-        <li>Mo</li>
-        <li>Tu</li>
-        <li>We</li>
-        <li>Th</li>
-        <li>Fr</li>
-        <li>Sa</li>
-        <li>Su</li>
-      </ul>
-
-      <ul class="days">
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
-        <li>5</li>
-        <li>6</li>
-        <li>7</li>
-        <li>8</li>
-        <li>9</li>
-        <li><span class="active">10</span></li>
-        <li>11</li>
-        <li>12</li>
-        <li>13</li>
-        <li>14</li>
-        <li>15</li>
-        <li>16</li>
-        <li>17</li>
-        <li>18</li>
-        <li>19</li>
-        <li>20</li>
-        <li>21</li>
-        <li>22</li>
-        <li>23</li>
-        <li>24</li>
-        <li>25</li>
-        <li>26</li>
-        <li>27</li>
-        <li>28</li>
-        <li>29</li>
-        <li>30</li>
-        <li>31</li>
-      </ul>
-    </div>
-
-  <h2>The top 200 chart for that day</h2>
-  <table class= "center">
-    <tr><th></th><th>Ranking</th><th>Song</th><th>Artist</th></tr>
-    <tr><td><a href="https://open.spotify.com/track/6SRsiMl7w1USE4mFqrOhHC">🎵 ⏯</a></td><td>1</td><td>brutal</td><td>Olivia Rodrigo</td></tr>
-    <tr><td>🎵 ⏯</td><td>2</td><td>Songgggg</td><td>Singer</td></tr>
-    <tr><td>🎵 ⏯</td><td>3</td><td>Musicccc </td><td>WOw singer</td></tr>
+  <table id="chart_table" class="center">
   </table>
-
 
 </body>
 </html>
