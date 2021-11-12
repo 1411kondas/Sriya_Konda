@@ -4,28 +4,29 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='mockup4.css') }}" />
     <script type="text/javascript" src="{{ url_for('static', filename='mockup4.js') }}" ></script>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" />
     <title>HTML/CSS samples</title>
 </head>
 
 
 <body style="background-color:#181717;">
-    <a href="index.html"><button class="homeIcon">🏠</button></a>
+    <a href="home"><button class="homeIcon">🏠</button></a>
 
 
     <div class="sidenav">
       <form action="/action_page.php?">
-      <a href="#Genre">Genre</a>
+      <!-- <a href="#Genre">Genre</a>
         <input type="checkbox" id="rock" name="rock" value="rock">
         <label for="rock">rock</label><br>
         <input type="checkbox" id="pop" name="pop" value="pop">
         <label for="pop">pop</label><br>
         <input type="checkbox" id="country" name="country" value="country">
-        <label for="country">country</label><br><br>
+        <label for="country">country</label><br><br> -->
       <a href="#Energy">Energy Level</a>
         <div class=“slidecontainer”>
-          <input type="range" min="1" max="100" value="50" class="slider"><br><br>
+          <input id="energy_value" type="range" min="1" max="100" value="50" class="slider"><br><br>
         </div>
-      <a href="#Duration" class="time">Duration of Playlist</a>
+      <!-- <a href="#Duration" class="time">Duration of Playlist</a>
         <ul>
           <li>hr:
             <input type="int" id="hr" name="hr" placeholder="hr">
@@ -33,8 +34,8 @@
           <li>
             min:
             <input type="int" id="min" name="min" placeholder="min"><br><br>
-          </li></ul>
-          <input type="submit" value="Submit">
+          </li></ul> -->
+          <input id="submit_button" type="submit" value="Submit">
       </form>
     </div>
 
@@ -43,16 +44,9 @@
 
 <div class="main">
   <h1>Let's make you a playlist!</h1>
-  <table class= "center">
-  <tr><th></th><th>Ranking</th><th>Song</th><th>Artist</th></tr>
-  <tr><td><a href="https://open.spotify.com/track/6SRsiMl7w1USE4mFqrOhHC">🎵 ⏯ </a></td><td>1</td><td>brutal</td><td>Olivia Rodrigo</td></tr>
-  <tr><td>play</td><td>2</td><td>Songgggg</td><td>Singer</td></tr>
-  <tr><td>play</td><td>3</td><td>Musicccc </td><td>WOw singer</td></tr>
+  <table id="playlist_table" class= "center">
   </table>
 </div>
-
-
-
 
 
 </body>

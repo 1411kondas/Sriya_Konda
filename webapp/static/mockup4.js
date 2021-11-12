@@ -1,6 +1,6 @@
 /*
-* mockup2.js
-* This is for searching by artists
+* mockup4.js
+* This is for generating a random playlist
 * Sriya and Kitty
 */
 
@@ -8,9 +8,9 @@
 window.onload = initialize;
 
 function initialize() {
-    var element = document.getElementById('go_button');
+    var element = document.getElementById('submit_button');
     if (element) {
-        element.onclick = onGoButton;
+        element.onclick = onSubmitButton;
     }
 }
 
@@ -24,32 +24,33 @@ function getAPIBaseURL() {
 }
 
 
-function getArtistQuery() {
-    var query = document.getElementById('artist_query').value;
+function getEnergyValue() {
+    var query = document.getElementById('energy_value').value;
+    query = query * 0.01
     return query;
 }
 
-function onGoButton() {
-    var url = getAPIBaseURL() + '/artists/' + getArtistQuery();
+function onSubmitButton() {
+    var url = getAPIBaseURL() + '/generate_playlist/' + getEnergyValue();
 
     fetch(url, {method: 'get'})
 
     .then((response) => response.json())
 
     .then(function(songs) {
-        var tableBody = '<tr><th></th><th>Song Name</th><th>Artist Name</th></tr>';
+        var tableBody = '<tr><th></th><th>Song</th><th>Artist</th></tr>';
 
-        for (var k = 0; k < songs.length; k++) {
-            var song = songs[k];
+        for (var k = 0; k < playlist_song_list.length; k++) {
+            var song = playlist_song_list[k];
             tableBody += '<tr><td><a href="' + song['url'] +'"> 🎵 ⏯ </a></td>'
                       + '<td>' + song['song_name'] + '</td>'
                       + '<td>' + song['artist_name'] + '</td>'
                       + '</tr>';
         }
 
-        var songTableElement = document.getElementById('song_table');
-        if (songTableElement) {
-            songTableElement.innerHTML = tableBody;
+        var playlistTableElement = document.getElementById('playlist_table');
+        if (playlistTableElement) {
+            playlistTableElement.innerHTML = tableBody;
         }
     })
 
