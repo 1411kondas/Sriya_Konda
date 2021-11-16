@@ -7,17 +7,16 @@
 */
 
 button {
-  display: block;
   cursor: pointer;
 }
 
 .homeIcon {
   height: 53px;
   width: 53px;
-  margin: 7px;
+  margin-top: : 7px;
   font-size: 35px;
   text-align: center;
-  margin-left: 160px; /* Same as the width of the sidenav */
+  margin-left: 9px;
 }
 
 
@@ -41,12 +40,14 @@ body {
 a{
   text-decoration: none;
   font-size: 22px;
+  cursor: default;
 
 }
 
-form {
-text-align: left;
-margin-left: 5px;
+
+tr {
+  padding-top: 10%;
+  padding-bottom:10%;
 }
 
 td, th{
@@ -60,7 +61,7 @@ ul {
 
 .sidenav {
   height: 100%;
-  width: 160px;
+  width: 17%;
   position: absolute;
   z-index: 1;
   top: 0;
@@ -71,18 +72,13 @@ ul {
   border-right: white;
 }
 
-.sidenav a {
-  padding-bottom: 12px;
+.sidenav p {
   text-decoration: none;
   font-size: 25px;
-  color: #818181;
-  display: block;
+  color: white;
+  margin-left: 9px;
 }
 
-
-.sidenav a:hover {
-  color: #f1f1f1;
-}
 
 .main {
   margin-left: 100px;
@@ -93,18 +89,6 @@ ul {
   margin-left: inherit;
 }
 
-input[type=int]{
-  margin-left: 10%;
-  font-size: 15px;
-  border-style: solid;
-  border-width: 2px;
-  border-color: #1DB954;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  text-align: center;
-  outline: none;
-  width: 15%;
-}
 
 
 .slidecontainer {
@@ -116,12 +100,12 @@ input[type=int]{
 .slider {
   -webkit-appearance: none;  /* Override default CSS styles */
   appearance: none;
-  width: 70%;
+  width: 80%;
   height: 25px; /* Specified height */
   background: #1DB954; /* Grey background */
   outline: none; /* Remove outline */
-  opacity: 1; /* Set transparency (for mouse-over effects on hover) */
   border-radius: 10px;
+  margin-left: 9px;
 }
 
 /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
@@ -137,6 +121,14 @@ input[type=int]{
 .slider::-moz-range-thumb {
   width: 25px; /* Set a specific slider handle width */
   height: 25px; /* Slider handle height */
-  background: yellow; /* Green background */
-  cursor: pointer; /* Cursor on hover */
+}
+
+#submit_button {
+  float: right;
+  margin-right: 9px;
+  cursor: pointer;
+}
+
+#HomeButton {
+  cursor:pointer;
 }

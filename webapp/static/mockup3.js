@@ -24,14 +24,19 @@ function getAPIBaseURL() {
 }
 
 
-function getWeek() {
-    var query = document.getElementById('week_selector').value;
+function getMonth() {
+    var query = document.getElementById('month_selector').value;
+    return query;
+}
+
+function getDay() {
+    var query = document.getElementById('day_selector').value;
     return query;
 }
 
 
 function onSubmitButton() {
-    var url = getAPIBaseURL() + '/top_200/' + getWeek();
+    var url = getAPIBaseURL() + '/top_200/2020' + getMonth() + getDay();
 
     fetch(url, {method: 'get'})
 

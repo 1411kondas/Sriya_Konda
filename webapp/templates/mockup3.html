@@ -10,7 +10,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>HTML/CSS samples</title>
+    <title>Search by Date</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='mockup3.css') }}" />
     <script type="text/javascript" src="{{ url_for('static', filename='mockup3.js') }}" ></script>
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" />
@@ -24,61 +24,53 @@
 
     <div id="input_form" class="center">
     <p class="center">I want the Top 200 Songs List for
-      <select id="week_selector">
-          <option value="01">2019-12-27 -- 2020-01-03</option>
-          <option value="02">2020-01-03--2020-01-10</option>
-          <option value="03">2020-01-10--2020-01-17</option>
-          <option value="04">2020-01-17--2020-01-24</option>
-          <option value="05">2020-01-24--2020-01-31</option>
-          <option value="06">2020-01-31--2020-02-07</option>
-          <option value="07">2020-02-07--2020-02-14</option>
-          <option value="08">2020-02-14--2020-02-21</option>
-          <option value="09">2020-02-21--2020-02-28</option>
-          <option value="10">2020-02-28--2020-03-06</option>
-          <option value="11">2020-03-06--2020-03-13</option>
-          <option value="12">2020-03-13--2020-03-20</option>
-          <option value="13">2020-03-20--2020-03-27</option>
-          <option value="14">2020-03-27--2020-04-03</option>
-          <option value="15">2020-04-03--2020-04-10</option>
-          <option value="16">2020-04-10--2020-04-17</option>
-          <option value="17">2020-04-17--2020-04-24</option>
-          <option value="18">2020-04-24--2020-05-01</option>
-          <option value="19">2020-05-01--2020-05-08</option>
-          <option value="20">2020-05-08--2020-05-15</option>
-          <option value="21">2020-05-15--2020-05-22</option>
-          <option value="22">2020-05-22--2020-05-29</option>
-          <option value="23">2020-05-29--2020-06-05</option>
-          <option value="24">2020-06-05--2020-06-12</option>
-          <option value="25">2020-06-12--2020-06-19</option>
-          <option value="26">2020-06-19--2020-06-26</option>
-          <option value="27">2020-06-26--2020-07-03</option>
-          <option value="28">2020-07-03--2020-07-10</option>
-          <option value="29">2020-07-10--2020-07-17</option>
-          <option value="30">2020-07-17--2020-07-24</option>
-          <option value="31">2020-07-24--2020-07-31</option>
-          <option value="32">2020-07-31--2020-08-07</option>
-          <option value="33">2020-08-07--2020-08-14</option>
-          <option value="34">2020-08-14--2020-08-21</option>
-          <option value="35">2020-08-21--2020-08-28</option>
-          <option value=“36”>2020-8-28--2020-9-04</option>
-          <option value=“37">2020-9-04--2020-9-11</option>
-          <option value=“38”>2020-9-11--2020-9-18</option>
-          <option value=“39">2020-9-18--2020-9-25</option>
-          <option value=“40”>2020-9-25--2020-10-02</option>
-          <option value=“41">2020-10-02--2020-10-09</option>
-          <option value=“42”>2020-10-09--2020-10-16</option>
-          <option value=“43">2020-10-16--2020-10-23</option>
-          <option value=“44”>2020-10-23--2020-10-30</option>
-          <option value=“45">2020-10-30--2020-11-06</option>
-          <option value=“46”>2020-11-06--2020-11-13</option>
-          <option value=“47">2020-11-13--2020-11-20</option>
-          <option value=“48”>2020-11-20--2020-11-27</option>
-          <option value=“49">2020-11-27--2020-12-04</option>
-          <option value=“50”>2020-12-04--2020-12-11</option>
-          <option value=“51">2020-12-11--2020-12-18</option>
-          <option value=“52”>2020-12-18--2020-12-25</option>
-          <option value=“53">2020-12-25--2020-01-01</option>
-
+      <select id="month_selector">
+          <option value="01">01</option>
+          <option value="02">02</option>
+          <option value="03">03</option>
+          <option value="04">04</option>
+          <option value="05">05</option>
+          <option value="06">06</option>
+          <option value="07">07</option>
+          <option value="08">08</option>
+          <option value="09">09</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+      </select>
+      /
+      <select id="day_selector">
+          <option value="01">01</option>
+          <option value="02">02</option>
+          <option value="03">03</option>
+          <option value="04">04</option>
+          <option value="05">05</option>
+          <option value="06">06</option>
+          <option value="07">07</option>
+          <option value="08">08</option>
+          <option value="09">09</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
+          <option value="21">21</option>
+          <option value="22">22</option>
+          <option value="23">23</option>
+          <option value="24">24</option>
+          <option value="25">25</option>
+          <option value="26">26</option>
+          <option value="27">27</option>
+          <option value="28">28</option>
+          <option value="29">29</option>
+          <option value="30">30</option>
+          <option value="31">31</option>
       </select>
       <button id="submit_button">Submit!</button>
     </p>

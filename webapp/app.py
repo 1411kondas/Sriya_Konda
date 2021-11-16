@@ -32,6 +32,11 @@ def make_playlist():
     return flask.render_template('mockup4.html')
 
 
+@app.route('/help')
+def help():
+    help_text = open('templates/help.txt').read()
+    return flask.Response(help_text, mimetype='text/plain')
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser('A spotify application, including API & DB')
     parser.add_argument('host', help='the host to run on')

@@ -1,0 +1,52 @@
+REQUEST: /artists/<artist_name>
+GET parameters
+    artist_name — required
+
+RESPONSE: a JSON list of dictionaries of artists whose name contains artist_name.
+          Each dictionary in this list will have the following fields.
+  artist_name -- (TEXT) the name of the artist
+  song_name -- (TEXT) the name of the song
+  release_date -- (DATE) the date on which the song was released
+  url -- (TEXT) url to the song on Spotify.com
+
+EXAMPLE(S):
+  /artists/nat
+[{“url”: “https://open.spotify.com/track/1VuAamHM7P3VQQEXYGG3Uu”, “song_name”: “Joy To The World”, “artist_name”: “Nat King Cole”, “release_date_year”: 1960, “release_date_month”: 10, “release_date_day”: 15}, {“url”: “https://open.spotify.com/track/4PS1e8f2LvuTFgUs1Cn3ON”, “song_name”: “The Christmas Song (Merry Christmas To You)“, “artist_name”: “Nat King Cole”, “release_date_year”: 1962, “release_date_month”: 10, “release_date_day”: 15}, {“url”: “https://open.spotify.com/track/0ecC8p17cDNlxHXkuYqeR6”, “song_name”: “Surrender”, “artist_name”: “Natalie Taylor”, “release_date_year”: 2019, “release_date_month”: 10, “release_date_day”: 29}]
+
+
+REQUEST: /generate_playlist/<energy>
+GET parameters
+    energy (optional, default: 0.5)
+
+RESPONSE: a JSON list of dictionaries of random songs that fit the user’s criteria. Each dictionary in this list will have the following fields.
+   artist_name -- (TEXT) the name of the artist
+   song_name -- (TEXT) the name of the song
+   url -- (TEXT) url to the song on Spotify.com
+ EXAMPLE(S): (Note, that because of the randomizing of the playlist, the example may not match exactly)
+   /generate_playlist/0.38
+   [{"url": "https://open.spotify.com/track/127QTOFJsJQp5LbJbu3A1y", "song_name": "Toosie Slide", "artist_name": "Drake"},
+    {"url": "https://open.spotify.com/track/6fxVffaTuwjgEk5h9QyRjy", "song_name": "Photograph", "artist_name": "Ed Sheeran"},
+    {"url": "https://open.spotify.com/track/2uIX8YMNjGMD7441kqyyNU", "song_name": "ocean eyes", "artist_name": "Billie Eilish"},
+    ...,
+    {"url": "https://open.spotify.com/track/4Oun2ylbjFKMPTiaSbbCih", "song_name": "WAP (feat. Megan Thee Stallion)", "artist_name": "Cardi B"},
+    {"url": "https://open.spotify.com/track/6IRdLKIyS4p7XNiP8r6rsx", "song_name": "all the good girls go to hell", "artist_name": "Billie Eilish"},
+    {"url": "https://open.spotify.com/track/4HBvwhhYo7YiYXkUDrOHzS", "song_name": "Trampoline", "artist_name": "SHAED"}]
+
+
+ REQUEST: /top_200/<date>
+ GET parameters
+   date (optional, default: 01/01/2020)
+ RESPONSE: a JSON list of dictionaries of the Spotify’s Top 200 charted songs for that week. Each dictionary in this list will have the following fields.
+   artist_name -- (TEXT) the name of the artist
+   song_name -- (TEXT) the name of the song
+   url -- (TEXT) url to the song on Spotify.com
+   song_rank — (INTEGER) rank of the song
+ EXAMPLE(S):
+ 	/top_200/20200531
+  [{"url": "https://open.spotify.com/track/7ytR5pFWmSjzHJIeQkgog4", "song_rank": 1, "song_name": "ROCKSTAR (feat. Roddy Ricch)", "artist_name": "DaBaby"},
+  {"url": "https://open.spotify.com/track/7ju97lgwC2rKQ6wwsf9no9", "song_rank": 2, "song_name": "Rain On Me (with Ariana Grande)", "artist_name": "Lady Gaga"},
+  {"url": "https://open.spotify.com/track/0VjIjW4GlUZAMYd2vXMi3b", "song_rank": 3, "song_name": "Blinding Lights", "artist_name": "The Weeknd"},
+  ...,
+  {"url": "https://open.spotify.com/track/2P91MQbaiQOfbiz9VqhqKQ", "song_rank": 198, "song_name": "I Like Me Better", "artist_name": "Lauv"},
+  {"url": "https://open.spotify.com/track/2qxmye6gAegTMjLKEBoR3d", "song_rank": 199, "song_name": "Let Me Down Slowly", "artist_name": "Alec Benjamin"},
+  {"url": "https://open.spotify.com/track/6RUKPb4LETWmmr3iAEQktW", "song_rank": 200, "song_name": "Something Just Like This", "artist_name": "The Chainsmokers"}]
