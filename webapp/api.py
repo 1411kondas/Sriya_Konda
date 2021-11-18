@@ -30,7 +30,7 @@ def get_songs_for_artist(artist_name):
     query = ''' SELECT songs.url, songs.song_name, artists.artist_name, songs.release_date_year, songs.release_date_month, songs.release_date_day
                 FROM songs, artists
                 WHERE artists.artist_id = songs.artist_id
-                AND artists.artist_name CONTAINS %s
+                AND artists.artist_name ILIKE %s
                 ORDER BY artists.artist_name, songs.song_name'''
 
     artist_song_list = []
