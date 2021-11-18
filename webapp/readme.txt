@@ -28,3 +28,7 @@ FEATURES NOT YET WORKING:
  • Add elegant descriptions on home page about each website feature
  • Change artist query so that it matches the last part of the artist’s name to
    the input given by the user
+
+NOTE:
+data.sql is in the data folder. In order to access it to add it into your database,
+you must cd into the data folder or use data/data.sql
