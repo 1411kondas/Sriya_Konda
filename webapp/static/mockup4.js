@@ -1,9 +1,8 @@
 /*
-* mockup4.js
-* This is for generating a random playlist
-* Sriya and Kitty
-* PLEASE NOTE! IT WILL THROW A 404 ERROR! DO NOT FRET! GO BACK ONE PAGE AND
-* IT WILL SHOW UP (chrome only? not sure) HELP US FIX THIS PLEASE?
+*   Kitty Tyree and Sriya Konda
+*   generate_playlist.js
+*   For use in the "webapp" assignment for Carleton's
+*   CS 257 Software Design class, Fall 2021.
 */
 
 
@@ -25,30 +24,59 @@ function getAPIBaseURL() {
     return baseURL;
 }
 
-
+// Retrives energy value from slider
 function getEnergyValue() {
     var query = document.getElementById('energy_value').value;
     query = query * 0.01
     return query;
 }
 
+// Retrives danceability value from slider
+function getDanceability() {
+    var query = document.getElementById('danceability_value').value;
+    query = query * 0.01
+    return query;
+}
+
+// Retrives tempo value from slider
+function getTempo() {
+    var query = document.getElementById('tempo_value').value;
+    return query;
+}
+
+// Retrives liveliness value from slider
+function getLiveliness() {
+    var query = document.getElementById('liveliness_value').value;
+    query = query * 0.01
+    return query;
+}
+
+// Populates HTML table with playlist containing songs fitting the criteria
+// values from the sliders
 function onSubmitButton() {
-    var url = getAPIBaseURL() + '/generate_playlist/' + getEnergyValue();
+    var url = getAPIBaseURL() + '/generate_playlist?energy=' + getEnergyValue()
+            +'&danceability=' + getDanceability() + '&tempo=' + getTempo()
+            + '&liveliness=' + getLiveliness();
 
     fetch(url, {method: 'get'})
 
     .then((response) => response.json())
 
     .then(function(songs) {
-        var tableBody = '<tr><th></th><th>Song</th><th>Artist</th></tr>';
-
-        for (var k = 0; k < songs.length; k++) {
-            var song = songs[k];
-            tableBody += '<tr><td><a href="' + song['url'] +'"> ⏯ </a></td>'
-                      + '<td>' + song['song_name'] + '</td>'
-                      + '<td>' + song['artist_name'] + '</td>'
-                      + '</tr>';
+      // In the case that no songs fit the criteria (likely)
+        if (songs.length == 0){
+          var tableBody = '<tr><th>There are no songs that match your search criteria 😢</th></tr>';
         }
+        else {
+          var tableBody = '<tr><th></th><th>Song</th><th>Artist</th></tr>';
+
+          for (var k = 0; k < songs.length; k++) {
+              var song = songs[k];
+              tableBody += '<tr><td><a href="' + song['url'] +'" target="_blank" rel="noopener noreferrer"> ⏯ </a></td>'
+                        + '<td>' + song['song_name'] + '</td>'
+                        + '<td>' + song['artist_name'] + '</td>'
+                        + '</tr>';
+          }}
 
         var playlistTableElement = document.getElementById('playlist_table');
         if (playlistTableElement) {

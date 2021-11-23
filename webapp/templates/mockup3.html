@@ -1,7 +1,6 @@
 <!--
     Kitty Tyree and Sriya Konda
-    mockup3.html
-    Jeff Ondich, 4 November 2021
+    date_search.html
     For use in the "webapp" assignment for Carleton's
     CS 257 Software Design class, Fall 2021.
 -->
@@ -11,8 +10,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Search by Date</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='mockup3.css') }}" />
-    <script type="text/javascript" src="{{ url_for('static', filename='mockup3.js') }}" ></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='date_search.css') }}" />
+    <script type="text/javascript" src="{{ url_for('static', filename='date_search.js') }}"></script>
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" />
 </head>
 
@@ -20,23 +19,21 @@
     <a href="home"><button class="homeIcon">🏠</button></a>
 
     <h1>Search by Date</h1>
-
-
     <div id="input_form" class="center">
-    <p class="center">I want the Top 200 Songs List for
-      <select id="month_selector">
-          <option value="01">01</option>
-          <option value="02">02</option>
-          <option value="03">03</option>
-          <option value="04">04</option>
-          <option value="05">05</option>
-          <option value="06">06</option>
-          <option value="07">07</option>
-          <option value="08">08</option>
-          <option value="09">09</option>
-          <option value="10">10</option>
-          <option value="11">11</option>
-          <option value="12">12</option>
+    <p class="center">I want the Top 200 Chart for
+      <select id="month_selector" >
+          <option value="01">Jan</option>
+          <option value="02">Feb</option>
+          <option value="03">Mar</option>
+          <option value="04">Apr</option>
+          <option value="05">May</option>
+          <option value="06">Jun</option>
+          <option value="07">Jul</option>
+          <option value="08">Aug</option>
+          <option value="09">Sep</option>
+          <option value="10">Oct</option>
+          <option value="11">Nov</option>
+          <option value="12">Dec</option>
       </select>
       /
       <select id="day_selector">
@@ -72,12 +69,12 @@
           <option value="30">30</option>
           <option value="31">31</option>
       </select>
+      / 2020
       <button id="submit_button">Submit!</button>
     </p>
     </div>
 
-  <table id="chart_table" class="center">
-  </table>
+  <table id="chart_table" class="center"></table>
 
 </body>
 </html>

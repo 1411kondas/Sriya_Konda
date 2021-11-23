@@ -1,7 +1,6 @@
 <!--
     Kitty Tyree and Sriya Konda
-    mockup2.html
-    Jeff Ondich, 4 November 2021
+    artist_search.html
     For use in the "webapp" assignment for Carleton's
     CS 257 Software Design class, Fall 2021.
 -->
@@ -11,8 +10,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='mockup2.css') }}" />
-    <script type="text/javascript" src="{{ url_for('static', filename='mockup2.js') }}" ></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='artist_search.css') }}" />
+    <script type="text/javascript" src="{{ url_for('static', filename='artist_search.js') }}" ></script>
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" />
     <title>Search By Artist</title>
 
@@ -21,9 +20,7 @@
 
 <body style="background-color:#181717;">
     <a href="home"><button class="homeIcon">🏠</button></a>
-
     <h1>Search by Artist</h1>
-
     <div>
       <p><input id="artist_query" type="text" placeholder="🔍 Search...">
       <button id="go_button">Go!</button></p>

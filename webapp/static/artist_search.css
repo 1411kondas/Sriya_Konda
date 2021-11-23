@@ -1,7 +1,6 @@
 /*
     Kitty Tyree and Sriya Konda
-    mockup2.css
-    Jeff Ondich, 4 November 2021
+    artist_search.css
     For use in the "webapp" assignment for Carleton's
     CS 257 Software Design class, Fall 2021.
 */
@@ -10,7 +9,9 @@ html, body{
   max-width: 100%;
   overflow-x: hidden;
   font-family: Sans-Serif;
-
+  margin-bottom: 3%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 button {
@@ -21,18 +22,12 @@ button {
 h1{
   text-align: center;
   font-size: 100px;
+  text-decoration: underline;
+  text-decoration-color: #1DB954;
 }
 
 p, h1, table, td, th {
   color: white;
-}
-
-.homeIcon {
-  height: 53px;
-  width: 53px;
-  margin: 7px;
-  font-size: 35px;
-  text-align: center;
 }
 
 p {
@@ -62,11 +57,13 @@ table, td, th {
 
 a{
   text-decoration: none;
+  cursor: pointer;
 }
 
 td, th{
-  padding: 0 25px;
-  padding-bottom: 5px;
+  padding: 0 45px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 th {
@@ -77,6 +74,14 @@ th {
 .center{
   margin-left: auto;
   margin-right: auto;
+}
+
+.homeIcon {
+  height: 53px;
+  width: 53px;
+  margin: 7px;
+  font-size: 35px;
+  text-align: center;
 }
 
 #songLink{

@@ -1,7 +1,8 @@
 /*
-* mockup3.js
-* This is for generating a random playlist
-* Sriya and Kitty
+* Kitty Tyree and Sriya Konda
+* date_search.js
+* For use in the "webapp" assignment for Carleton's
+* CS 257 Software Design class, Fall 2021.
 */
 
 
@@ -23,18 +24,19 @@ function getAPIBaseURL() {
     return baseURL;
 }
 
-
+// Retrives month value
 function getMonth() {
     var query = document.getElementById('month_selector').value;
     return query;
 }
 
+// Retrives day value
 function getDay() {
     var query = document.getElementById('day_selector').value;
     return query;
 }
 
-
+// Populates the HTML table with the chart from the user inputted date
 function onSubmitButton() {
     var url = getAPIBaseURL() + '/top_200/2020' + getMonth() + getDay();
 
@@ -47,7 +49,7 @@ function onSubmitButton() {
 
         for (var k = 0; k < songs.length; k++) {
             var song = songs[k];
-            tableBody += '<tr><td><a href="' + song['url'] +'"> ⏯ </a></td>'
+            tableBody += '<tr><td><a href="' + song['url'] +'" target="_blank" rel="noopener noreferrer"> ⏯ </a></td>'
                       + '<td>' + song['song_rank'] + '</td>'
                       + '<td>' + song['song_name'] + '</td>'
                       + '<td>' + song['artist_name'] + '</td>'
