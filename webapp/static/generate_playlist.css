@@ -129,6 +129,11 @@ ul {
   height: 25px; /* Slider handle height */
 }
 
+.min_max{
+  display: inline;
+  padding-top: 0px;
+}
+
 #submit_button {
   float: right;
   margin-right: 9px;
@@ -139,10 +144,6 @@ ul {
   cursor:pointer;
 }
 
-.min_max{
-  display: inline;
-  padding-top: 0px;
-}
 
 #min_label{
   float: left;
