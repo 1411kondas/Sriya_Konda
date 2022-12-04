@@ -1,0 +1,57 @@
+<!--
+    Kitty Tyree and Sriya Konda
+    generate_playlist.html
+    For use in the "webapp" assignment for Carleton's
+    CS 257 Software Design class, Fall 2021.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='generate_playlist.css') }}" />
+    <script type="text/javascript" src="{{ url_for('static', filename='generate_playlist.js') }}" ></script>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+    <title>Generate a Playlist</title>
+</head>
+
+<body style="background-color:#181717;">
+
+    <div class="sidenav">
+      <a href="home" id="HomeButton"><button class="homeIcon">🏠</button></a>
+      <p>Energy Level</p>
+        <div class=“slidecontainer”>
+          <input id="energy_value" type="range" min="1" max="100" value="50" class="slider"><br><br>
+        </div>
+      <p>Danceability</p>
+        <div class=“slidecontainer”>
+          <input id="danceability_value" type="range" min="1" max="100" value="50" class="slider"><br><br>
+        </div>
+      <p>Tempo</p>
+        <div class=“slidecontainer”>
+          <input id="tempo_value" type="range" min="60" max="186" value="123" class="slider"><br><br>
+        </div>
+      <p>Liveliness</p>
+        <div class=“slidecontainer” id="botom">
+          <input id="liveliness_value" type="range" min="1" max="100" value="50" class="slider">
+        </div>
+        <div class="min_max">
+          <div id="min_label">
+            min
+          </div>
+          <div id="max_label">
+            max
+          </div>
+        </div>
+        <input id="submit_button" type="submit" value="Submit">
+    </div>
+
+    <div class="main">
+      <h1>Let's make you a playlist!</h1>
+      <table id="playlist_table" class= "center">
+      </table>
+    </div>
+
+
+</body>
+</html>
