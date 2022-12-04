@@ -1,0 +1,54 @@
+Kitty Tyree and Sriya Konda
+October 31, 2021
+
+We are using the spotify dataset found at this link:
+https://www.kaggle.com/sashankpillai/spotify-top-200-charts-20202021
+The dataset logs the Spotify top 200 weekly charts from Jan 2020-July 2021.
+You can download the dataset csv file by clicking the "Download (738 kB)"
+button underneath the top banner. 
+
+User stories:
+
+
+Story: As a user, I  want to be able to find the top 200 chart on my birthday 
+	(June 12) so that I can see what people were jamming out to on my 
+	newest rotation around the sun!
+
+Implementation: On the website, in a subsection set aside for searching the 
+	database by dates, there will be a dropdown interactive calendar that 
+	a user may find a specific date and will be returned the top 200 chart 
+	for that day.
+
+Story: As an exhausted college student, I want to find super energetic, upbeat 
+	songs for when I need to stay awake when grinding out my CS project 
+	given to me by the one and only Jeff Ondich.
+
+Implementation: There can be a value slider (think of a bar scale with moving 
+	indicator going left and right where the user can pick what level of 
+	energy they want the songs to have). It will return a list of 20 
+	randomized songs with the indicated energy value.
+
+Story: As a Carleton College student on the move, I want a playlist that will 
+	give me just enough songs to span my 13.6 minute walk from Goodhe to 
+	the Weitz. Oh and also, I want that to be only Italian pop music.
+
+Implementation: There will be a place where the user can ask for a randomly
+	generated playlist. They will be able to put in certain parameters 
+	like duration of playlist, genre, and maybe others (haven’t decided 
+	yet, possibly artists) that will satisfy the user’s wishes. Since 
+	our data gives duration in milliseconds (why? Who knows?!), we can 
+	roughly match the time.
+
+Story: As an avid Taylor Swift fan, I want all of Taylor Swift’s songs that 
+	were on the top 200 charts in 2020 because she’s awesome. 
+
+Implementation: There will be a search function that can take in user text 
+	strings, in this case an artist name, and spit back a list of all 
+	of the artist’s charted songs.  
+
+Story: As a super curious person, I would like to know the top 54 songs that 
+	charted on the week of March 23. 
+
+Implementation: As part of the section that returns the top 200 songs that 
+	charted by a specific date, users can specify how many songs exactly 
+	they would like to see. If not specified, all 200 charted songs will return.  
