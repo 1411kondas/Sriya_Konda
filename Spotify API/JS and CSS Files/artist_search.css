@@ -1,0 +1,97 @@
+/*
+    Kitty Tyree and Sriya Konda
+    artist_search.css
+    For use in the "webapp" assignment for Carleton's
+    CS 257 Software Design class, Fall 2021.
+*/
+
+html, body{
+  max-width: 100%;
+  overflow-x: hidden;
+  font-family: Sans-Serif;
+  margin-bottom: 3%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button {
+  cursor: pointer;
+}
+
+
+h1{
+  text-align: center;
+  font-size: 100px;
+  text-decoration: underline;
+  text-decoration-color: #1DB954;
+}
+
+p, h1, table, td, th {
+  color: white;
+}
+
+p {
+  text-align: center;
+}
+
+input[type=text]{
+  padding: 23px 50px;
+  font-size: 35px;
+  border-style: solid;
+  border-width: 5px;
+  border-color: #1DB954;
+  border-radius: 30px;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  text-align: center;
+  outline: none;
+}
+
+table, td, th {
+    border-collapse: collapse;
+    border: none;
+    font-size: 25px;
+    margin-left: 30px;
+    text-align: left;
+}
+
+a{
+  text-decoration: none;
+  cursor: pointer;
+}
+
+td, th{
+  padding: 0 45px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+th {
+  font-size: 35px
+}
+
+
+.center{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.homeIcon {
+  height: 53px;
+  width: 53px;
+  margin: 7px;
+  font-size: 35px;
+  text-align: center;
+}
+
+#songLink{
+  font-size: 30px;
+}
+
+#go_button{
+  font-size: 250%;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  display: inline;
+
+}
