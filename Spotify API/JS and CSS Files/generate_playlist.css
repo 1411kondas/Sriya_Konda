@@ -1,0 +1,165 @@
+/*
+*   Kitty Tyree and Sriya Konda
+*   generate_playlist.css
+*   For use in the "webapp" assignment for Carleton's
+*   CS 257 Software Design class, Fall 2021.
+*/
+
+html{
+  margin-bottom: 3%;
+}
+
+button {
+  cursor: pointer;
+}
+
+h1{
+  margin-left: inherit;
+  text-align: center;
+  font-size: 80px;
+  color: white;
+  text-decoration: underline;
+  text-decoration-color: #1DB954;
+}
+
+body, table{
+  color: white;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+a{
+  text-decoration: none;
+  font-size: 24px;
+  cursor: default;
+
+}
+
+
+tr {
+  font-size: 26px;
+}
+
+td, th{
+  padding: 0 45px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+th {
+  font-size: 40px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.homeIcon {
+  height: 53px;
+  width: 53px;
+  margin-top: : 7px;
+  font-size: 35px;
+  text-align: center;
+  margin-left: 9px;
+}
+
+.sidenav {
+  height: 100%;
+  width: 17%;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+  border-right: white;
+}
+
+.sidenav p {
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  margin-left: 9px;
+}
+
+.main {
+  margin-left: 100px;
+  font-size: 28px; /* Increased text to enable scrolling */
+}
+
+.center {
+  margin-left: inherit;
+}
+
+.slidecontainer {
+  width: 70%; /* Width of the outside container */
+  height: 40px;
+  padding-bottom: 15px;
+}
+
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 80%;
+  height: 25px; /* Specified height */
+  background: #1DB954; /* Grey background */
+  outline: none; /* Remove outline */
+  border-radius: 10px;
+  margin-left: 9px;
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  border-radius: 100%;
+  background: white; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+.slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+}
+
+.min_max{
+  display: inline;
+  padding-top: 0px;
+}
+
+#submit_button {
+  float: right;
+  margin-right: 9px;
+  cursor: pointer;
+}
+
+#HomeButton {
+  cursor:pointer;
+}
+
+
+#min_label{
+  float: left;
+  width: 50%;
+  font-size: 15px;
+  display: inline;
+  margin-left: 11px;
+}
+
+#max_label{
+  text-align: right;
+  font-size: 15px;
+  margin-right: 17%;
+  margin-bottom: 15px;
+}
+
+#bottom{
+  margin-bottom: 5px;
+}
