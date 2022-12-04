@@ -1,0 +1,86 @@
+Help Documentation for api
+
+REQUEST: /artists/<artist_name>
+GET parameters
+    artist_name – required; a string to help search up an artist
+
+RESPONSE: a JSON list of dictionaries of artists whose name contains artist_name.
+          Each dictionary in this list will have the following fields.
+              artist_id -- (INT) a unique identifier specific to each artist
+              artist_name -- (TEXT) the name of the artist
+
+EXAMPLE:
+  /artists/nat
+[{"artist_id": 230, "artist_name": "Frank Sinatra"},
+{"artist_id": 235, "artist_name": "Nat King Cole"},
+{"artist_id": 146, "artist_name": "Natalie Taylor"}]
+
+
+
+
+REQUEST: /artist/<artist_id>
+GET parameters
+    artist_id - required; a unique identifier specific to each artist
+
+RESPONSE: a JSON list of dictionaries containing the songs from the artist
+          belonging to <artist_id> that charted on Spotify in 2020. Each
+          dictionary will have the following fields:
+              url -- (TEXT) url to the song on Spotify.com
+              song_name -- (TEXT) the name of the song
+              release_date_year -- (INT) the year the song was released
+              release_date_month -- (INT) the month the song was released (1-12)
+              release_date_day -- (INT) the day of the month the song was released
+
+EXAMPLE:
+  /artist/230
+[{"url": "https://open.spotify.com/track/4HEOgBHRCExyYVeTyrXsnL", "song_name": "Jingle Bells - Remastered 1999", "release_date_year": 1957, "release_date_month": 9, "release_date_day": 17},
+{"url": "https://open.spotify.com/track/4kKdvXD0ez7jp1296JmAts", "song_name": "Let It Snow! Let It Snow! Let It Snow! (with The B. Swanson Quartet)", "release_date_year": 1994, "release_date_month": 11, "release_date_day": 8},
+{"url": "https://open.spotify.com/track/7faDzZnZYqTyYThx2sbHVQ", "song_name": "Mistletoe And Holly - Remastered 1999", "release_date_year": 1957, "release_date_month": 9, "release_date_day": 17}]
+
+
+
+
+REQUEST: /generate_playlist
+GET parameters
+    energy – optional; Objective measure of a song's energy level as determined by Kaggle dataset creator (range 0.01-1.00)
+    danceability - optional; Objective measure of a song's danceability as determined by Kaggle dataset creator (range 0.01-1.00)
+    tempo - optional; Subjective measure of a song's tempo in bpm
+    liveliness - optional; Objective measure of a song's liveliness as determined by Kaggle dataset creator (range 0.01-1.00)
+
+
+RESPONSE: a JSON list of dictionaries of random songs that fit the user’s criteria.
+          Each dictionary in this list will have the following fields:
+            url -- (TEXT) url to the song on Spotify.com
+            song_name -- (TEXT) the name of the song
+            artist_name -- (TEXT) the name of the artist
+
+EXAMPLE: (Note, that because of the randomizing of the playlist, the example may not match exactly)
+  /generate_playlist?energy=0.12&danceability=0.40
+[{"url": "https://open.spotify.com/track/0lLdorYw7lVrJydTINhWdI", "song_name": "It's Beginning to Look a Lot like Christmas", "artist_name": "Michael Bubl\u00e9"},
+{"url": "https://open.spotify.com/track/4kKdvXD0ez7jp1296JmAts", "song_name": "Let It Snow! Let It Snow! Let It Snow! (with The B. Swanson Quartet)", "artist_name": "Frank Sinatra"},
+{"url": "https://open.spotify.com/track/4so0Wek9Ig1p6CRCHuINwW", "song_name": "White Christmas", "artist_name": "Bing Crosby"},
+{"url": "https://open.spotify.com/track/2ygvZOXrIeVL4xZmAWJT2C", "song_name": "my future", "artist_name": "Billie Eilish"}]
+
+
+
+
+REQUEST: /top_200/<date>
+  GET parameters
+    date - required; takes the form of YYYYMMDD (note the charts are only from 2020)
+
+RESPONSE: A JSON list of dictionaries of the Spotify’s Top 200 charted songs of that day (changed weekly).
+           Each dictionary in this list will have the following fields:
+               url -- (TEXT) url to the song on Spotify.com
+               song_rank — (INTEGER) rank of the song
+               song_name -- (TEXT) the name of the song
+               artist_name -- (TEXT) the name of the artist
+
+ EXAMPLE:
+ 	/top_200/20200531
+[{"url": "https://open.spotify.com/track/7ytR5pFWmSjzHJIeQkgog4", "song_rank": 1, "song_name": "ROCKSTAR (feat. Roddy Ricch)", "artist_name": "DaBaby"},
+{"url": "https://open.spotify.com/track/7ju97lgwC2rKQ6wwsf9no9", "song_rank": 2, "song_name": "Rain On Me (with Ariana Grande)", "artist_name": "Lady Gaga"},
+{"url": "https://open.spotify.com/track/0VjIjW4GlUZAMYd2vXMi3b", "song_rank": 3, "song_name": "Blinding Lights", "artist_name": "The Weeknd"},
+...,
+{"url": "https://open.spotify.com/track/2P91MQbaiQOfbiz9VqhqKQ", "song_rank": 198, "song_name": "I Like Me Better", "artist_name": "Lauv"},
+{"url": "https://open.spotify.com/track/2qxmye6gAegTMjLKEBoR3d", "song_rank": 199, "song_name": "Let Me Down Slowly", "artist_name": "Alec Benjamin"},
+{"url": "https://open.spotify.com/track/6RUKPb4LETWmmr3iAEQktW", "song_rank": 200, "song_name": "Something Just Like This", "artist_name": "The Chainsmokers"}]
